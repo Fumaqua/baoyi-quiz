@@ -14,7 +14,8 @@
     civildefense: "#34506b",
     basiclaw: "#5d6b44",
     chengqing: "#47707c",
-    airdefense: "#7c5968"
+    airdefense: "#7c5968",
+    police: "#8a6a3b"
   };
   const STORE_KEY = "baoyi-quiz-v1";
   const LETTERS = { 1: "1", 2: "2", 3: "3", 4: "4", 5: "5" };
@@ -387,11 +388,11 @@
         <div class="hero-copy">
           <span class="eyebrow on-dark">113 年 · 替代役民防役專業訓練</span>
           <h1>保一<em>考古</em></h1>
-          <p class="hero-desc">五份試卷、八十道題。先用練習把觀念補齊，再用模擬測驗檢查手感；錯過的題目會自動留在錯題本，直到你真正記住。</p>
+          <p class="hero-desc">六份試卷、一百一十道題。先用練習把觀念補齊，再用模擬測驗檢查手感；錯過的題目會自動留在錯題本，直到你真正記住。</p>
           <div class="hero-meta">
-            <span class="chip">5 份試卷</span>
-            <span class="chip">80 題</span>
-            <span class="chip">20 是非 · 60 選擇</span>
+            <span class="chip">6 份試卷</span>
+            <span class="chip">110 題</span>
+            <span class="chip">25 是非 · 85 選擇</span>
           </div>
           <div class="hero-actions">
             <button type="button" class="btn btn-primary btn-lg" data-action="formal-exam">
@@ -464,7 +465,7 @@
 
       <div class="home-note">
         <span>※</span>
-        <span><b>關於答案：</b>多數題目依原卷括號標記整理，以「原卷標記」標示；其中幾題已校正明顯錯誤，法規未明文或屬實務判斷者標為「參考答案」，建議搭配現行法規與講義複習。「防空避難」照片僅拍到第 6–10 題，因此只收錄 5 題。</span>
+        <span><b>關於答案：</b>多數題目依原卷括號標記整理，以「原卷標記」標示；其中幾題已校正明顯錯誤，法規未明文或屬實務判斷者標為「參考答案」，建議搭配現行法規與講義複習。「防空避難」已補齊是非題 1–5 與選擇題 1–5；另新增「警察勤務介紹與協勤要領」全卷 20 題。</span>
       </div>
     </div>`;
   }
@@ -613,8 +614,7 @@
       `<span class="chip">${esc(q.section)}</span>`,
       `<span class="chip">${q.type === "tf" ? "是非" : "選擇"}</span>`,
       q.source === "reference" ? '<span class="chip chip-red">參考答案</span>' : '<span class="chip chip-green">原卷標記</span>',
-      isFormal ? '<span class="chip">每題 4 分</span>' : "",
-      q.number >= 6 && q.number <= 10 && q.paper === "airdefense" ? '<span class="chip">節錄</span>' : ""
+      isFormal ? '<span class="chip">每題 4 分</span>' : ""
     ].join("");
 
     const bookmark = store.progress[q.id] && store.progress[q.id].bookmarked;
@@ -1110,7 +1110,7 @@
         <div class="setup-block">
           <h3>測驗範圍</h3>
           <div class="seg">
-            <button type="button" class="seg-btn ${ui.setup.paper === "all" ? "is-active" : ""}" data-action="setup-option" data-key="paper" data-value="all">全部 5 卷</button>
+            <button type="button" class="seg-btn ${ui.setup.paper === "all" ? "is-active" : ""}" data-action="setup-option" data-key="paper" data-value="all">全部 6 卷</button>
             ${PAPERS.map((p) => `<button type="button" class="seg-btn ${ui.setup.paper === p.id ? "is-active" : ""}" data-action="setup-option" data-key="paper" data-value="${p.id}">${esc(p.short)}</button>`).join("")}
           </div>
           <p style="margin-top:12px;color:var(--ink-3);font-size:10.5px;">此範圍共 ${poolCount} 題。</p>

@@ -1,17 +1,18 @@
 /* 保一考古｜替代役民防役刷題
- * 題庫由 IMG_2639–IMG_2649 逐頁轉錄整理。
+ * 題庫由 IMG_2639–IMG_2649、IMG_2680–IMG_2683 逐頁轉錄整理。
  * source: "official" = 原卷已標註答案；"reference" = 原卷未標答案，依現行法規整理。
  */
 window.QUIZ_DATA = {
   meta: {
     title: "保一考古",
     subtitle: "替代役民防役・專業訓練考古題",
-    version: "1.2.2",
-    updated: "2026-11-07",
+    version: "1.3.0",
+    updated: "2026-11-10",
     notes: [
       "題目依照片逐字轉錄，標點與選項編號尽量保留原貌。",
       "「基礎民防法令」原卷未標答案，App 內以「參考答案」標示，建議搭配現行法規複習。",
-      "「防空避難」原始照片只拍到第 6–10 題，因此僅收錄這 5 題。"
+      "「防空避難」已補齊是非題 1–5 與選擇題 1–5，與原有第 6–10 題合為 15 題。",
+      "新增「警察勤務介紹與協勤要領」20 題（原卷頁 12–14，IMG_2681–2683）。"
     ]
   },
   papers: [
@@ -58,9 +59,17 @@ window.QUIZ_DATA = {
       short: "避難",
       subtitle: "防空避難處所與標示",
       description: "手機查詢、避難包、標示牌與緊急警報",
-      source: "IMG_2646（第 6–10 題）",
-      tone: "plum",
-      answerNote: "原始照片僅有第 6–10 題，前 5 題未收錄。"
+      source: "IMG_2646、IMG_2680",
+      tone: "plum"
+    },
+    {
+      id: "police",
+      name: "警察勤務介紹與協勤要領",
+      short: "勤務",
+      subtitle: "保一替代役・曾春僑副教授",
+      description: "警察勤務條例、勤務方式、巡邏網與勤休規定",
+      source: "IMG_2681–2683（第 12–14 頁）",
+      tone: "bronze"
     }
   ],
   questions: [
@@ -844,6 +853,98 @@ window.QUIZ_DATA = {
       explanation: "先聽懂警報、辨識狀況，才能正確引導避難；原卷標記為 1，惟本題屬實務判斷，僅供參考。"
     },
 
+    /* ================= 防空避難（是非題 1–5、選擇題 1–5，IMG_2680） ================= */
+    {
+      id: "airdefense-tf-01", paper: "airdefense", section: "是非題", type: "tf", number: 1,
+      stem: "防空避難室多位於大樓地下室，戰爭時國防部發布命令，民眾進入避難，惟憲法賦予個人財產權之保障，需所有權人同意，方可進入。",
+      answer: "X", source: "official",
+      explanation: "防空疏散避難命令具強制性，避難處所不得以所有權人未同意為由拒絕民眾進入；戰時並得依法徵用。"
+    },
+    {
+      id: "airdefense-tf-02", paper: "airdefense", section: "是非題", type: "tf", number: 2,
+      stem: "建築物所有權人、使用人應維護建築物合法使用與其構造及設備安全。故防空避難設備應避免積水、髒亂，並具備基本照明設備。",
+      answer: "O", source: "official",
+      explanation: "防空避難設備屬建築物公共安全的一環，所有權人、使用人負維護義務。"
+    },
+    {
+      id: "airdefense-tf-03", paper: "airdefense", section: "是非題", type: "tf", number: 3,
+      stem: "發生空襲危難時，村（里）辦公室於聽到緊急警報發放或收到國家級警報簡訊後，立即利用村（里）廣播器請民眾迅速避難，並引導民眾進入防空避難處所。",
+      answer: "O", source: "official",
+      explanation: "村里廣播是最貼近社區的警示管道，可補警報器涵蓋範圍之不足。"
+    },
+    {
+      id: "airdefense-tf-04", paper: "airdefense", section: "是非題", type: "tf", number: 4,
+      stem: "於防空疏散避難設備堆放雜物，未依規定保持進出口通道暢通者，涉及違反公寓大廈管理條例第十六條第二項，處新臺幣四萬元以上二十萬元以下罰鍰，並得令其限期改善或履行義務。",
+      answer: "O", source: "official",
+      explanation: "防空避難空間不得堆置雜物、通道須保持暢通，違者可依公寓大廈管理條例裁罰並限期改善。"
+    },
+    {
+      id: "airdefense-tf-05", paper: "airdefense", section: "是非題", type: "tf", number: 5,
+      stem: "建築物所有權人、使用人平時於地下層防空避難室放置大型家具等生活用品，且排放整齊乾淨，屬於合理使用範圍，非違規事項。",
+      answer: "X", source: "official",
+      explanation: "防空避難室不得堆放雜物或移作他用，即使排放整齊仍占用避難空間、影響動線，屬違規。"
+    },
+    {
+      id: "airdefense-mc-01", paper: "airdefense", section: "選擇題", type: "mc", number: 1,
+      stem: "查詢住家附近防空避難處所，下列透過網頁可查詢到的連結，何者為非？",
+      options: [
+        { value: "1", text: "於各直轄市、（縣）市社會局網站「避難收容資訊」連結。" },
+        { value: "2", text: "於直轄市、（縣）市警察局網站「防空避難專區」連結。" },
+        { value: "3", text: "於內政部警政署全球資訊網「防空避難專區」連結。" },
+        { value: "4", text: "於內政部消防署網站「簡易疏散避難地圖」連結。" }
+      ],
+      answer: "1", source: "official",
+      explanation: "社會局「避難收容資訊」是災害收容處所，不是防空避難處所；防空避難處所以警政署、警察局「防空避難專區」及消防署避難地圖查詢。"
+    },
+    {
+      id: "airdefense-mc-02", paper: "airdefense", section: "選擇題", type: "mc", number: 2,
+      stem: "民防法規定有關「防空疏散避難」，何者錯誤？",
+      options: [
+        { value: "1", text: "國防部得會同有關機關實施防空演習，命令實施疏散避難。" },
+        { value: "2", text: "屬於民防工作範圍。" },
+        { value: "3", text: "僅於戰爭發生或將發生時，由國防部命令實施疏散避難，平時防空演習除外。" },
+        { value: "4", text: "違反疏散避難命令，可處新臺幣三萬元以上十五萬元以下罰鍰。" }
+      ],
+      answer: "3", source: "official",
+      explanation: "防空疏散避難平時亦得配合演習實施，並非僅限戰爭發生或將發生時。"
+    },
+    {
+      id: "airdefense-mc-03", paper: "airdefense", section: "選擇題", type: "mc", number: 3,
+      stem: "各直轄市、縣（市）政府之防空避難設備核定、公告，其權責機關為何？",
+      options: [
+        { value: "1", text: "皆屬警察機關權責。" },
+        { value: "2", text: "分別為主管建築機關、警察機關權責。" },
+        { value: "3", text: "分別為消防機關、警察機關權責。" },
+        { value: "4", text: "皆屬消防機關權責。" }
+      ],
+      answer: "2", source: "official",
+      explanation: "防空避難設備之核定屬建築主管機關權責，公告則由警察機關辦理。"
+    },
+    {
+      id: "airdefense-mc-04", paper: "airdefense", section: "選擇題", type: "mc", number: 4,
+      stem: "空襲警報響起時，民眾採取的避難措施，何者錯誤？",
+      options: [
+        { value: "1", text: "於室內民眾，進入地下室或窗戶較少的房間。" },
+        { value: "2", text: "於室外民眾，進入貼有「防空避難」標示牌處所。" },
+        { value: "3", text: "於空曠地區，利用周邊地形、地物，採避難姿勢就地掩蔽。" },
+        { value: "4", text: "於車上民眾，利用車內座位採避難姿勢掩蔽。" }
+      ],
+      answer: "4", source: "official",
+      explanation: "車內無法有效阻隔爆炸衝擊與破片，應下車就近進入堅固建築物或就地掩蔽。"
+    },
+    {
+      id: "airdefense-mc-05", paper: "airdefense", section: "選擇題", type: "mc", number: 5,
+      stem: "有關「防空避難姿勢」何者正確？",
+      options: [
+        { value: "1", text: "趴下降低高度、雙手護頭、背對爆炸、穩定靜止等待機會移動。" },
+        { value: "2", text: "跪姿、雙手護頭、嘴巴稍張。" },
+        { value: "3", text: "跪姿、胸口離地、雙手遮嘴、鼻，眼睛稍張。" },
+        { value: "4", text: "跪姿、胸口離地、雙手遮眼、耳，嘴巴稍張。" }
+      ],
+      answer: "1", source: "official",
+      explanation: "原卷標記為 1：先趴下降低高度、雙手護頭並背對爆炸方向，減少曝露於衝擊波與破片。"
+    },
+
     /* ================= 防空避難（第 6–10 題） ================= */
     {
       id: "airdefense-mc-06", paper: "airdefense", section: "選擇題", type: "mc", number: 6,
@@ -904,6 +1005,248 @@ window.QUIZ_DATA = {
       ],
       answer: "3", source: "official",
       explanation: "緊急警報為 1 長音 2 短音，共 115 秒。"
+    },
+
+    /* ================= 警察勤務介紹與協勤要領（IMG_2681–2683） ================= */
+    {
+      id: "police-mc-01", paper: "police", section: "選擇題", type: "mc", number: 1,
+      stem: "依警察勤務條例第 3 條規定，警察勤務之實施，應晝夜執行，普及轄區，並以行政警察為中心，其他各種警察配合之，下列敘述何者正確？",
+      options: [
+        { value: "1", text: "普及轄區係指永不斷間，規範警察勤務之時間，值班勤務最能彰顯此精神。" },
+        { value: "2", text: "臺北市政府警察局大安分局偵查隊所屬之刑事警察，配合警勤區劃分其責任區，係屬「行政警察」。" },
+        { value: "3", text: "連江縣警察局東引警察所，係屬「各種警察」。" },
+        { value: "4", text: "警勤區員警於轄區里民活動中，向社區里民進行宣導，係適用「以行政警察為中心」之警察勤務制度。" }
+      ],
+      answer: "4", source: "official",
+      explanation: "警勤區員警屬行政警察，深入里民活動宣導、為民服務，正是「以行政警察為中心」的展現；偵查隊刑事警察非行政警察，離島警察所亦屬行政警察系統。"
+    },
+    {
+      id: "police-mc-02", paper: "police", section: "選擇題", type: "mc", number: 2,
+      stem: "警察勤務原則說明，何者錯誤？",
+      options: [
+        { value: "1", text: "不需符合私生活自由原則。" },
+        { value: "2", text: "不合警察目的者，不得任意擴張。" },
+        { value: "3", text: "以不干涉民事法律關係為原則。" },
+        { value: "4", text: "比例原則要素之一為必要性。" }
+      ],
+      answer: "1", source: "official",
+      explanation: "警察勤務仍應尊重人民私生活自由，不得以勤務需要為由任意侵入私領域。"
+    },
+    {
+      id: "police-mc-03", paper: "police", section: "選擇題", type: "mc", number: 3,
+      stem: "依警察勤務條例規定，下列何者不是勤務方式之執行？",
+      options: [
+        { value: "1", text: "勤區查察、巡邏、臨檢、守望、值班及備勤等六大勤務，得視服勤人數及轄區治安情形，採用巡邏及其他方式互換之，但均以巡邏為主。" },
+        { value: "2", text: "各級勤務機構因治安需要，得指派人員編組機動隊（組），運用組合警力，在指定地區執行巡邏、路檢、臨檢等勤務。" },
+        { value: "3", text: "警察局或分局設有各種警察隊（組），依其任務，分派人員，服行各該專屬勤務。" },
+        { value: "4", text: "共同勤務是由服勤人員依據勤務分配表，輪流交替互換實施。" }
+      ],
+      answer: "1", source: "official",
+      explanation: "六大勤務得視服勤人數與轄區治安情形互換運用，條例並未規定「均以巡邏為主」。"
+    },
+    {
+      id: "police-mc-04", paper: "police", section: "選擇題", type: "mc", number: 4,
+      stem: "依據警察勤務條例規定，下列何者為錯誤？",
+      options: [
+        { value: "1", text: "分派勤務，力求勞逸平均，動靜工作務使均勻，藉以調節精神體力。" },
+        { value: "2", text: "警察分局為勤務規劃監督機構，負責轄區警察勤務之規劃、指揮、管制、督導及考核，並對重點性勤務，得逕為執行。" },
+        { value: "3", text: "警察局或分局設有各種警察隊（組）者，應依其任務，分派人員，服行各該專屬勤務，構成轄區點、線、面，整體勤務之實施。" },
+        { value: "4", text: "勤前教育之實施，由警察機關視所轄勤務機構實際情形，規定其實施方式、時間及次數。" }
+      ],
+      answer: "2", source: "official",
+      explanation: "分局是勤務規劃、監督機構，重點性勤務仍由所屬分駐（派出）所或專業單位執行。"
+    },
+    {
+      id: "police-mc-05", paper: "police", section: "選擇題", type: "mc", number: 5,
+      stem: "關於執行守望勤務，下列敘述何者錯誤？",
+      options: [
+        { value: "1", text: "活動範圍可在崗位周圍約 200 公尺內巡視。" },
+        { value: "2", text: "執行便衣守望勤務，應依任務需要，力求藏於無形。" },
+        { value: "3", text: "固定式守望勤務以預防危害發生為目標，於轄區之重要地點，設置崗位。" },
+        { value: "4", text: "為任務需要，得於特定處所設置守望崗。" }
+      ],
+      answer: "1", source: "official",
+      explanation: "守望屬定點勤務，以就地監視、警戒與通報為主，活動範圍不宜過大，200 公尺與定點守望精神不符。"
+    },
+    {
+      id: "police-mc-06", paper: "police", section: "選擇題", type: "mc", number: 6,
+      stem: "依據警察勤務條例規定，請問警察局基於何種情況，須分別實施個別勤務與共同勤務時，得以分局或分駐所、派出所為單位，指派員警專責執行勤區查察？",
+      options: [
+        { value: "1", text: "人口需要。" },
+        { value: "2", text: "事實需要。" },
+        { value: "3", text: "業務需要。" },
+        { value: "4", text: "面積需要。" }
+      ],
+      answer: "2", source: "official",
+      explanation: "條例明定警察局基於「事實需要」，得將個別勤務與共同勤務分別實施。"
+    },
+    {
+      id: "police-mc-07", paper: "police", section: "選擇題", type: "mc", number: 7,
+      stem: "警察勤務的運作模式說明，何者錯誤？",
+      options: [
+        { value: "1", text: "反應式勤務可適時提供民眾所請求的服務。" },
+        { value: "2", text: "反應式勤務較可主動打擊無被害者犯罪。" },
+        { value: "3", text: "先發式策略易擴大警察機關權限。" },
+        { value: "4", text: "社區警政為先發式策略。" }
+      ],
+      answer: "2", source: "official",
+      explanation: "反應式勤務是被動受理報案與服務請求；主動打擊無被害者犯罪要靠先發式（攻勢）勤務。"
+    },
+    {
+      id: "police-mc-08", paper: "police", section: "選擇題", type: "mc", number: 8,
+      stem: "警察勤務的編組與分類方式，何者錯誤？",
+      options: [
+        { value: "1", text: "現行夜間勤務起迄時間為下午 18 時至 24 時。" },
+        { value: "2", text: "守望屬個別勤務。" },
+        { value: "3", text: "勤區查察就算雙人編組仍為個別勤務。" },
+        { value: "4", text: "目前各警察局所轄分駐（派出）所為散在制。" }
+      ],
+      answer: "2", source: "official",
+      explanation: "個別勤務只有勤區查察；守望與巡邏、臨檢、值班、備勤同屬共同勤務。"
+    },
+    {
+      id: "police-mc-09", paper: "police", section: "選擇題", type: "mc", number: 9,
+      stem: "下列有關警察分駐所、派出所之設置，何者錯誤？",
+      options: [
+        { value: "1", text: "警察分駐所與派出所兩者均被定位為警察勤務執行機構。" },
+        { value: "2", text: "分駐（派出）所設置的目的有 3 個：即組合警勤區、形成治安面以及供作服務站。" },
+        { value: "3", text: "分駐所、派出所設置或裁併所需經費，由該管警察局陳報內政部警政署編列經費。" },
+        { value: "4", text: "基於行政裁量權或效率等原因，警察機關在覺得必要時得主動設置分駐（派出）所。" }
+      ],
+      answer: "3", source: "official",
+      explanation: "分駐（派出）所設置或裁併所需經費由地方政府編列，非由警政署編列。"
+    },
+    {
+      id: "police-mc-10", paper: "police", section: "選擇題", type: "mc", number: 10,
+      stem: "警察分局地位說明，何者錯誤？",
+      options: [
+        { value: "1", text: "意義上為派出機關。" },
+        { value: "2", text: "亦為轄區內各勤務執行機構督考者。" },
+        { value: "3", text: "警察分局著重執行重點性勤務。" },
+        { value: "4", text: "不得聯合多個鄉鎮成立分局。" }
+      ],
+      answer: "4", source: "official",
+      explanation: "分局轄區得視治安與地理需要，聯合數個鄉鎮市區設置，故「不得聯合」有誤。"
+    },
+    {
+      id: "police-mc-11", paper: "police", section: "選擇題", type: "mc", number: 11,
+      stem: "有關巡邏勤務之敘述，下列何者正確？",
+      options: [
+        { value: "1", text: "直轄市警察分局警備隊負責執行第二層巡邏網，應配合分駐（派出）所轄區實施點線巡邏或集中機動派遣。" },
+        { value: "2", text: "派出所執行第一層巡邏勤務員警於任務目標區實施小區域步巡時，通常以每秒走 1.5 步至 2 步為原則。" },
+        { value: "3", text: "直轄市警察局之第三層巡邏網係由交通警察大隊負責，應依地區特性及治安、交通事故資料分析，劃分巡邏區，並配合分駐（派出）所轄區規劃巡邏網，選定巡邏要點。" },
+        { value: "4", text: "巡邏員警出勤時應向勤務指揮中心試通無線電，並向該中心報告「出網」列管，巡邏途中約每 20 分鐘定時報告一次，收勤時應報告經允許後始可關閉電台收勤，並將巡邏車開回駐地停放，結束巡邏勤務。" }
+      ],
+      answer: "2", source: "official",
+      explanation: "步巡速度以每秒 1.5～2 步（約每分鐘 90～120 步）為原則；其餘選項的巡邏網層級與派遣方式與規定不符。"
+    },
+    {
+      id: "police-mc-12", paper: "police", section: "選擇題", type: "mc", number: 12,
+      stem: "警察分駐（派出）所性質說明，何者錯誤？",
+      options: [
+        { value: "1", text: "結合數個警勤區為其轄區。" },
+        { value: "2", text: "所長應親自規劃、分配各警勤區個別及共同勤務。" },
+        { value: "3", text: "警衛派出所無警勤區。" },
+        { value: "4", text: "得對外行文。" }
+      ],
+      answer: "4", source: "official",
+      explanation: "分駐（派出）所是勤務執行機構，不得對外行文；對外行文以警察局或分局名義為之。"
+    },
+    {
+      id: "police-mc-13", paper: "police", section: "選擇題", type: "mc", number: 13,
+      stem: "關於勤務指揮中心作業規定對於勤務動態管制的要求，下列敘述何者錯誤？",
+      options: [
+        { value: "1", text: "巡邏勤務原則上採定時報告，每小時不得少於 1 次。" },
+        { value: "2", text: "員警駕駛有 GPS 功能警車或攜帶警用行動載具並登入系統者，即可完全免除所有報告義務。" },
+        { value: "3", text: "員警遇可疑人車，應於盤查前先向勤指中心報告地點、對象特徵等資訊，盤查結束後亦應回報。" },
+        { value: "4", text: "巡邏勤務若違反定時定點報告或勤務抽呼查詢規定，應依警察人員獎懲標準懲處。" }
+      ],
+      answer: "2", source: "official",
+      explanation: "GPS 或行動載具僅能簡化部分定時報告，遇特殊狀況仍須主動回報，不能完全免除。"
+    },
+    {
+      id: "police-mc-14", paper: "police", section: "選擇題", type: "mc", number: 14,
+      stem: "依據警察勤務條例規定，在警察分局與警察分駐（派出）所之區別上，警察分局係定位於勤務的規劃、指揮、管制、督導與考核之機構，以及重點性勤務執行的機構，請問在警察分局與警察分駐（派出）所之間，下列何者屬於這兩者最重要的區別？",
+      options: [
+        { value: "1", text: "敬業精神表現與應對能力。" },
+        { value: "2", text: "工作複雜程度與溝通管道。" },
+        { value: "3", text: "行政行為表現與經濟規模。" },
+        { value: "4", text: "員警民主素養與服從態度。" }
+      ],
+      answer: "3", source: "official",
+      explanation: "關鍵差別在組織定位：分局是規劃、指揮、督導與考核的監督層級，分駐（派出）所是執行層級，反映在行政行為的表現與組織（經濟）規模上。"
+    },
+    {
+      id: "police-mc-15", paper: "police", section: "選擇題", type: "mc", number: 15,
+      stem: "警察勤務方式說明，何者錯誤？",
+      options: [
+        { value: "1", text: "勤區查察可用家戶訪查方式執行。" },
+        { value: "2", text: "巡邏時可執行檢查、取締、盤詰等工作。" },
+        { value: "3", text: "備勤時主要在勤務機構待命。" },
+        { value: "4", text: "臨檢主要工作為警戒、警衛、管制。" }
+      ],
+      answer: "4", source: "official",
+      explanation: "警戒、警衛、管制是守望勤務的主要工作；臨檢以查察、盤詰可疑人事物為主。"
+    },
+    {
+      id: "police-mc-16", paper: "police", section: "選擇題", type: "mc", number: 16,
+      stem: "有關定線與非定線巡邏之敘述，何者錯誤？",
+      options: [
+        { value: "1", text: "定線較易遍及全區。" },
+        { value: "2", text: "定線容易監督不易偷勤。" },
+        { value: "3", text: "不定線授權巡邏人員自行選定路線。" },
+        { value: "4", text: "不定線嚇阻效用較大。" }
+      ],
+      answer: "1", source: "official",
+      explanation: "定線巡邏路線固定、易被掌握而留下死角；要遍及全區並提高嚇阻力，須靠不定線巡邏。"
+    },
+    {
+      id: "police-mc-17", paper: "police", section: "選擇題", type: "mc", number: 17,
+      stem: "警察勤務繁重經常影響員警之休假，依「警察機關輪班輪休人員勤休實施要點」規定，有關員警休息時間，下列敘述何者正確？",
+      options: [
+        { value: "1", text: "依其服務機關之輪班輪休制度排定，服勤人員每週應有二日以上之休息時間。" },
+        { value: "2", text: "如因勤務需要，可調整為每二週內有四日之休息，或每四週內有八日之休息。" },
+        { value: "3", text: "服勤日中至少應有連續一小時之休息，由各警察機關於服勤時數內調配之，休息時間可計入服勤時數。" },
+        { value: "4", text: "服勤人員更換班次時，至少應有連續八小時之休息時間。" }
+      ],
+      answer: "2", source: "official",
+      explanation: "每週原則二日休息，得因勤務需要調整為每二週四日或每四週八日；休息時間不計入服勤時數。"
+    },
+    {
+      id: "police-mc-18", paper: "police", section: "選擇題", type: "mc", number: 18,
+      stem: "勤前教育敘述，何者錯誤？",
+      options: [
+        { value: "1", text: "聯合勤教以派出所為單位。" },
+        { value: "2", text: "偵查隊可實施基層勤教。" },
+        { value: "3", text: "基層勤教可檢查裝備服儀。" },
+        { value: "4", text: "勤教可併計服勤時數。" }
+      ],
+      answer: "1", source: "official",
+      explanation: "基層勤教以分駐（派出）所為單位實施；聯合勤教則由分局（大隊）整合所屬單位辦理。"
+    },
+    {
+      id: "police-mc-19", paper: "police", section: "選擇題", type: "mc", number: 19,
+      stem: "警察勤務實施方式與規劃，會隨時代演進而有所不同，有關警察勤務規劃之敘述，下列何者錯誤？",
+      options: [
+        { value: "1", text: "警察勤務有賴縝密規劃，規劃上大約可分為集中制、散在制、集中散在併用制。" },
+        { value: "2", text: "規劃原則必須是全面性，考量地區治安特性及人力狀況，一天 24 小時持續不斷的警戒。" },
+        { value: "3", text: "勤務規劃重心，從早期以著重破案率而強調專業化警政，並以犯罪偵查為重點的方式，逐步調整為破案與預防並重模式。" },
+        { value: "4", text: "社區警政的基本精神是運用民力以預防犯罪，在警察勤務中，則以勤區查察之家戶訪查方式為手段，強調犯罪預防、為民服務及社會治安調查等任務。" }
+      ],
+      answer: "3", source: "official",
+      explanation: "本項敘述的階段與因果（破案率、專業化警政、犯罪偵查）與講義所載勤務規劃重心的演進不符；其餘三項均為講義原文，建議搭配上課講義複習。"
+    },
+    {
+      id: "police-mc-20", paper: "police", section: "選擇題", type: "mc", number: 20,
+      stem: "聯合指揮所開設敘述，何者錯誤？",
+      options: [
+        { value: "1", text: "3 級開設時由勤指中心主任督導運作。" },
+        { value: "2", text: "發生社會治安狀況時由長官核定 2 級開設。" },
+        { value: "3", text: "1 級開設時由幕僚長主持。" },
+        { value: "4", text: "3 級開設時編組人員保持正常作息。" }
+      ],
+      answer: "3", source: "official",
+      explanation: "聯合指揮所 1 級開設由機關首長（局長）主持，非由幕僚長主持。"
     }
   ]
 };
